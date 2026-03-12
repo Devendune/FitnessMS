@@ -18,6 +18,10 @@ public class UserService
     private UserRepository userRepository;
     private ModelMapper modelMapper;
     
+    public Boolean validateUser(String userId) {
+        return userRepository.existsById(userId);
+    }
+    
     public UserResponse getUserProfile(String userId)
     {
         Optional<User> user = userRepository.findById(userId);

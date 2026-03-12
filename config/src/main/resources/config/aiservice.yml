@@ -1,0 +1,30 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/FitnessRecommendations
+      database: FitnessRecommendations
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+rabbitmq:
+  exchange:
+    name: fitnessExchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
+  hostname: localhost
+  port: 5672
+  username: guest
+  password: guest
+
+gemini:
+  api:
+    url: https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent
+    key: AIzaSyBKnnSfzHPzDkdZA86h8_eZryy4C94K688
